@@ -9,7 +9,7 @@
 		// If a route other than status is requested,
 		// go to the auth route
 		$urlRouterProvider.otherwise('/auth');
-		
+
 		$stateProvider
 			.state('auth', {
 				url: '/auth',
@@ -39,9 +39,9 @@
 					// Use the getUserData method on the User service
 					// to grab the data from the /users endpoint in
 					// Firebase for the logged-in user
-					$rootScope.loggedInUserData = User.getUserData(loggedInUser.uid);				
-				}				
+					$rootScope.loggedInUserData = User.getUserData(loggedInUser.uid);
+				}
 			});
 		});
 
-})();
+	})();

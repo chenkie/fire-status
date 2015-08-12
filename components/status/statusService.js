@@ -1,14 +1,14 @@
 (function() {
 
-	'use strict';
+  'use strict';
 
-	angular
-		.module('statusApp')
-		.factory('Status', StatusService);
+  angular
+    .module('statusApp')
+    .factory('Status', StatusService);
 
-	function StatusService($firebaseArray) {
-		var ref = new Firebase("https://statusapp.firebaseio.com/status");
-	  return $firebaseArray(ref);
-	}
+  function StatusService($firebaseArray) {
+    var ref = new Firebase("https://statusapp.firebaseio.com/status");
+    return $firebaseArray(ref);
+  }
 
 })();

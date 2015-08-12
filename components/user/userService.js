@@ -11,7 +11,7 @@
 		function newUserRef(user) {
 			var ref = new Firebase("https://statusapp.firebaseio.com/users/" + user.uid);
 			return $firebaseObject(ref);
-		}		
+		}
 
 		function getUserData(user) {
 			var ref = new Firebase("https://statusapp.firebaseio.com/users/" + user);
@@ -21,7 +21,7 @@
 		function getLoggedInUser() {
 			var user = localStorage.getItem('firebase:session::statusapp');
 			if(user) {
-				return JSON.parse(user);				
+				return JSON.parse(user);
 			}
 		}
 
@@ -30,7 +30,6 @@
 			getUserData: getUserData,
 			getLoggedInUser: getLoggedInUser
 		}
-	    
 	}
 
 })();

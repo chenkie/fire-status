@@ -8,8 +8,8 @@
 
 	function StatusController($rootScope, Status, md5) {
 
-		var vm = this;	
-		
+		var vm = this;
+
 		vm.addStatus = addStatus;
 		vm.deleteStatus = deleteStatus;
 		vm.md5 = md5;
@@ -18,7 +18,7 @@
 		function addStatus() {
 			if(vm.statusText) {
 
-				// Add the status data to Firebase				
+				// Add the status data to Firebase
 				vm.statusData.$add({
 					date: Firebase.ServerValue.TIMESTAMP,
 					text: vm.statusText,
