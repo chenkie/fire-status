@@ -1,0 +1,24 @@
+<md-input-container>
+  <label>Status</label>
+  <textarea ng-model="status.statusText" type="text"></textarea>
+</md-input-container>
+<md-button class="md-raised md-warn" ng-click="status.addStatus()">Post</md-button>
+
+<md-content>
+  <md-list>
+    <md-list-item class="md-3-line" ng-repeat="statusItem in status.statusData | orderBy:'-date'">
+      <img ng-src="http://www.gravatar.com/avatar/{{status.md5.createHash(statusItem.user.email)}}" class="face" alt="{{statusItem.user.username}}">
+      <div class="md-list-item-text">
+        <h3>{{statusItem.user.username}}</h3>
+        <span>{{statusItem.date | date:'mediumDate'}}</span>
+        <p>{{statusItem.text}}</p>                
+      </div>
+      <md-divider md-inset></md-divider>
+      <md-icon class="remove-status" 
+          ng-if="statusItem.user.username === loggedInUserData.username" 
+          ng-click="status.deleteStatus(statusItem)">
+          X
+      </md-icon>
+    </md-list-item>
+  </md-list>
+</md-content>
