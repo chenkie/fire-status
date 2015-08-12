@@ -24,7 +24,7 @@
 				password: vm.password
 			}).then(function(userData) {
 				saveUser(userData);
-				login():
+				login()
 			}).catch(function(error) {
 				vm.error = error;
 			});
@@ -44,6 +44,7 @@
 				$state.go('status');
 			}, function(error) {
 				console.log("there was an error! " + error);
+			});
 		}
 
 		function login() {
